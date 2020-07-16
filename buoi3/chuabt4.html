@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    li{
+        display: inline-block;
+        border: 1px solid black;
+        padding: 10px 20px 10px 20px;
+        margin-left: -5px;
+        background-color: burlywood;
+        width: 150px;
+
+    }
+    li:hover{
+        cursor: pointer;
+        /* thay doi con tro; */
+        background-color: cadetblue;
+    }
+    cap1 > li {
+        display: inline-block;
+    }
+    cap2{
+        position: absolute;
+        list-style: none;
+        top: 38px;
+        left: -36px;
+
+    }
+</style>
+<body>
+    <div class="container">
+        <ul class="cap1">
+            <li>trang chủ</li>
+            <li class="quânonam">quan ao nam
+                <ul>
+                    <li>áo cộc tay</li>
+                    <li>quần jean</li>
+                    <li>đồng hồ đeo tay
+                        <ul class="cap2">
+                            <li>dong ho rolex</li>
+                            <li>dong ho</li>
+                            <li>dong ho hang ma</li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </li>
+            <li>quan ao nu</li>
+            <li>quan ao trẻ em</li>
+        </ul>
+
+    </div>
+</body>
+</html>

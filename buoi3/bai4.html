@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<style>
+.menu {
+	text-align: center;
+}
+.menu li {
+	border: solid 2px;
+	background-color: burlywood;
+	width: 200px;
+	height: 50px;
+	display: inline-block;
+	line-height: 50px;
+	position: relative;
+	text-align: center;
+	font-weight: bold;
+}
+menu li:hover{
+        background-color:darksalmon;
+    }
+.nam{
+	display: none;
+	position: absolute;
+	
+
+}
+.nam li {
+	margin-left: -42px;
+}
+.menu li:hover .nam{
+        display: block;		}
+.time {
+	display: none;
+	position: absolute;
+
+
+}
+.time li{
+	    margin-left: 0px;
+    margin-top: -49px;
+}
+
+
+.menu li:hover .time{
+        display: block;		}		
+		
+</style>
+<body>
+	<div class="menu">
+		<ul>
+			<li>Trang chủ</li>
+			<li>Quần áo nam
+				<ul class="nam">
+					<li>áo cộc tay</li>
+					<li>quần jean</li>
+					<li>đồng hồ đeo tay
+						<ul class="time">
+							<li>đồng hồ casio</li>
+							<li>đồng hồ rolex</li>
+							<li>đồng hồ hàng mã</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>Quần áo nữ</li>
+			<li>Quần áo trẻ em</li>
+
+
+		</ul>
+
+
+	</div>
+	
+</body>
+</html>
