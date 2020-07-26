@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var thoigian = +(window.prompt("nhap thoi gian:")) ;
+        var tien = 1000;
+        if (thoigian==0){
+            document.write("gia cuoc = 0 dong");
+
+        }
+        else if (thoigian > 0){
+            if(thoigian < 50){
+                tien += thoigian*600;
+            }
+            else if (thoigian < 200){
+                tien += 50*600 +(thoigian-50)*400;
+
+            }
+            else if (thoigian > 200){
+                tien += 50*600 + 150*400 + (thoigian-150)*200;
+
+
+            }
+            
+            document.write("so tien can phai thanh toan la :" + tien + "d");
+        }
+        else{
+            document.write("gia tri khong hop le")
+        }
+    </script>
+</body>
+</html>
