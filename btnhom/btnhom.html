@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>My Blog</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .wrapper {
+            font-family: Arial;
+        }
+
+        .header {
+            background-color: coral;
+            text-align: center;
+            width: 1200px;
+            height: 200px;
+            margin: 0 0 0 150px;
+        }
+
+        .header .left img {
+            float: left;
+            height: 200px;
+            width: 300px;
+        }
+
+        .header .right img {
+            height: 200px;
+            width: 900px;
+        }
+
+
+        /*Dropdown*/
+        ul {
+            list-style-type: none;
+            margin: 0;
+            overflow: hidden;
+            background-color: rgb(206, 119, 119);
+        }
+
+        li {
+            float: left;
+            display: list-item;
+            text-align: -webkit-match-parent;
+
+        }
+
+        li a,
+        .dropbtn {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .menu-header a:hover,
+        .dropdown:hover .dropbtn {
+            background-color: rgb(89, 92, 79);
+        }
+
+        li.dropdown {
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #a15858;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .menu-header .search-container {
+            float: right;
+        }
+
+        .menu-header input[type=text] {
+            padding: 6px;
+            margin-top: 8px;
+            font-size: 17px;
+            border: none;
+        }
+
+        .menu-header .search-container button {
+            float: right;
+            padding: 6px 10px;
+            margin-top: 8px;
+            margin-right: 16px;
+            background: #ddd;
+            font-size: 17px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .menu-header .search-container button:hover {
+            background: #ccc;
+        }
+
+        @media screen and (max-width: 600px) {
+            .menu-header .search-container {
+                float: none;
+            }
+
+            .menu-header input[type=text],
+            .menu-header .search-container button {
+                float: none;
+                display: block;
+                text-align: left;
+                width: 100%;
+                margin: 0;
+                padding: 14px;
+            }
+
+            .menu-header input[type=text] {
+                border: 1px solid #ccc;
+            }
+        }
+
+            /*slideshow*/
+            .slideshow {
+                width: 1503px;
+                height: 600px;
+            }
+
+            .mySlides {
+                display: none;
+            }
+
+            .slideshow img {
+                width: 1503px;
+                height: 600px;
+            }
+
+
+            /*main*/
+            .detail {
+                height: 2150px;
+                width: 1200px;
+                margin: 0 auto;
+            }
+
+            .detail a {
+                text-decoration: none;
+            }
+
+            .leftaa {
+                width: 890px;
+
+                float: left;
+                margin: 0 5px 0 0;
+
+            }
+
+            .rightaa {
+
+                width: 300px;
+
+                float: left;
+                margin: 0 0 0 5px;
+            }
+
+            .rightaa .sidebar .widget .content-w ul {
+                background-color: azure;
+            }
+
+            .colum1 {
+                width: 260px;
+                height: 360px;
+                float: left;
+                margin: 2px 36px 2px 0px;
+            }
+
+            .detail .leftaa .noibat .list-nb .row .colum1 img {
+                margin-right: 10px;
+                height: 150px;
+                width: 265px;
+                border: cadetblue;
+
+            }
+
+            .news-detail {
+                margin-bottom: 25px;
+                padding-bottom: 25px;
+                border-bottom: 1px solid #ededed;
+            }
+
+            .post-news .content-news .news-detail img {
+                float: left;
+                margin-right: 10px;
+                height: 150px;
+                width: 265px;
+            }
+
+            .quatrang {
+                text-align: center;
+            }
+
+            /*Right*/
+            .widget {
+                margin-bottom: 30px;
+            }
+
+            .widget h3 {
+                background: #286090;
+                color: #fff;
+                font-size: 15px;
+                text-transform: uppercase;
+                padding: 10px;
+                font-weight: 600;
+
+                margin-bottom: 0px;
+            }
+
+            .content-w {
+                border: 1px solid #ededed;
+
+            }
+
+            .content-w p {
+                padding: 8px 10px;
+                font-size: 14px;
+
+            }
+
+            .content-new {
+                border-bottom: 1px solid #ededed;
+
+            }
+
+            .content-new .cnl {
+                float: left;
+                margin: 5px 10px 20px 0;
+            }
+
+            .content-new .cnr a {
+                text-decoration: none;
+
+            }
+
+
+
+            .meta {
+                margin-bottom: 10px;
+            }
+
+            .content-mostv {
+                border-bottom: 1px solid #ededed;
+            }
+
+            .content-mostv a {
+                text-decoration: none;
+            }
+
+
+            .content-mostv span {
+                display: inline-block;
+                width: 35px;
+                height: 35px;
+                text-align: center;
+                line-height: 35px;
+                font-size: 15px;
+                background: #286090;
+                color: #fff;
+                border-radius: 50%;
+                float: left;
+                margin-right: 10px;
+            }
+
+            .content-w {
+                border: 1px solid #ededed;
+            }
+
+            .content-w a {
+                color: #4e4e4e;
+                font-weight: 500;
+            }
+
+            /*FOOTER*/
+            .footer {
+                background: #286090;
+                color: #fff;
+                padding: 30px 0px 0px;
+                margin-bottom: 0px;
+                border-top: 8px solid #3977ad;
+                height: 400px;
+
+            }
+
+            .block-footer {
+                padding: 10px 10px 10px 10px;
+            }
+
+            .block-footer a {
+                color: #ededed;
+                text-decoration: none;
+            }
+
+            .block-footer>a {
+                border: 1px solid #ededed;
+                padding: 8px 10px;
+                color: #ededed;
+                display: inline-block;
+                margin-top: 10px;
+            }
+
+            .footer h3 {
+                font-size: 18px;
+                text-transform: uppercase;
+                margin-bottom: 15px;
+                padding-bottom: 15px;
+                border-bottom: 1px solid #ededed;
+            }
+
+            .container {
+                margin-left: 150px;
+                height: 300px;
+                padding-right: 15px;
+                padding-left: 15px;
+
+            }
+
+            .row1 {
+                margin-right: -15px;
+                margin-left: -15px;
+
+            }
+
+            .col {
+                width: 400px;
+                float: left;
+            }
+
+            .copyright {
+                padding: 10px;
+                margin-bottom: 0px;
+                text-align: center;
+                background: #3289d4;
+                margin-top: 30px;
+
+            }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="left"> <a href="#">
+                    <img src="https://lh3.googleusercontent.com/proxy/afD3nnlvMxqeguceUy9JYVGgEUTOGvO_jRfBtMVsrQ8FPrOG9rcDdcBIK6yulZTcQ27WNg8dV0bpaxTfcauqx5G1mLpdZF6aZgcnVcmzP5-IFQGYTVJRNxJgJsdx41XP1qHo666m"
+                        alt="#"></a></div>
+            <div class="right">
+                <a href=""><img
+                        src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/viVN/Images/football-fw19-hp-euro-multifeds-launch-mastheadS-2-desktop_tcm337-374109.jpg" /></a>
+            </div>
+
+        </div>
+        <div class="menu-header">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#news">News</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">VIP</a>
+                    <div class="dropdown-content">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                    </div>
+                </li>
+                <li><a href="#news">Hot</a></li>
+                <li><a href="#news">Drammar</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Ngoại Hạng Anh</a>
+                    <div class="dropdown-content">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                    </div>
+                </li>
+                <li><a href="#news">THời Trang</a></li>
+                <li><a href="#news">Pháp Luật</a></li>
+                <li><a href="#news">Công Nghệ</a></li>
+                <li><a href="#news">Du Lịch</a></li>
+                <div class="search-container">
+                    <form action="/action_page.php">
+                        <input type="text" placeholder="Search.." name="search">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+            </ul>
+
+        </div>
+
+        <div class="slideshow">
+
+            <img class="mySlides w3-animate-fading"
+                src="https://thuthuatnhanh.com/wp-content/uploads/2019/07/hinh-nen-cristiano-ronaldo.jpg" />
+            <img class="mySlides w3-animate-fading"
+                src="https://thuthuatnhanh.com/wp-content/uploads/2018/07/hinh-nen-messi-dep-nhat.jpg">
+            <img class="mySlides w3-animate-fading"
+                src="https://anhbiafb.com/uploads/ctv_2/FILE-20170412-1337Q7HKG77X6S61.png">
+        </div>
+
+        <div class="detail">
+            <div class="leftaa">
+                <div class="noibat">
+                    <h2>Bài viết nổi bật</h2>
+                    <div>
+                        <a href="#"><img
+                                src="https://cdn.24h.com.vn/upload/3-2020/images/2020-08-22//clip-ava-1598089288-294-width640height480.jpg"
+                                width="857px" height="400px"></a>
+
+                        <h4><a href="#">Messi phẫn nộ vì Barca phản bội, Juventus thanh lý 5 SAO phục vụ Ronaldo (Clip 1
+                                phút Bóng đá 24H)</a></h4>
+                        <div class="">
+                            <span>Ngày đăng: 30-09-2019</span>
+                            <span>Lượt xem: 2344 lượt</span>
+                            <p>Siêu sao Messi giận dữ khi bị Barca phản bội, trong khi tân HLV Pirlo muốn thanh lý 5
+                                ngôi sao Juventus nhằm phục vụ Ronaldo. Những thông tin này sẽ có trong Clip 1 phút Bóng
+                                đá 24H ngày 22/8.</p>
+
+                        </div>
+                    </div>
+                    <div class="list-nb">
+                        <div class="row">
+                            <div class="colum1">
+                                <a href="#"><img
+                                        src="https://cdn.24h.com.vn/upload/3-2020/images/2020-08-22/medium/118207510_2634149263464328_2865976630220557387_n-640-1598081380-779-width640height480.jpg" /></a>
+                                <h4><a href="#">Cầu thủ U22 Việt Nam chảy máu cam ở buổi tập trưa, có người “thở không
+                                        ra hơi”</a></h4>
+                                <div>
+                                    <span>Ngày đăng: 30-09-2019</span>
+                                </div>
+                            </div>
+                            <div class="colum1">
+                                <a href="#"><img
+                                        src="https://cdn.24h.com.vn/upload/3-2020/images/2020-08-22/medium/higuainronaldo-juventus-2019_5fe13aes3wx21c793efn1k16d-640-1598066988-344-width640height480.jpg" /></a>
+                                <h4><a href="#">Juventus gạt bỏ Higuain, tướng mới Pirlo chiều Ronaldo "hết cỡ", như con
+                                        cưng</a></h4>
+                                <div>
+                                    <span>Ngày đăng: 30-09-2019</span>
+                                </div>
+                            </div>
+                            <div class="colum1">
+                                <a href="#"><img
+                                        src="https://cdn.24h.com.vn/upload/3-2020/images/2020-08-22//mc-2-ava-1598088297-361-width640height480.jpg" />
+                                    <h4><a href="#">"Quái thú" Serie A đặt một chân tới Man City: MU, Liverpool tiếc đứt
+                                            ruột</a></h4>
+                                    <div>
+                                        <span>Ngày đăng: 30-09-2019</span>
+                                    </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="post-news">
+                    <h2>BÀI VIẾT MỚI NHẤT</h2>
+                    <div class="content-news">
+                        <div class="news-detail">
+                            <a><img
+                                    src="https://cdn.24h.com.vn/upload/3-2020/images/2020-08-22/medium/2-640-1598089879-919-width640height480.jpg" /></a>
+                            <div class="info-post">
+                                <h4> <a href="">Quang Hải, Công Phượng, Văn Hậu bất ngờ "tăng giá": Ai đắt nhất ĐT Việt
+                                        Nam? </a></h4>
+                            </div>
+                            <div>
+                                <span>Ngày đăng: 30-09-2019</span>
+                            </div>
+                            <p>Sau những thành công liên tiếp tại đấu trường châu lục của đội tuyển quốc gia, các cầu
+                                thủ Việt Nam đã được giới mộ điệu chú ý hơn. Bằng chứng là chuyên trang chuyển nhượng
+                                Transfermarkt đã thường xuyên cập nhật định giá của các cầu thủ Việt Nam so với trước
+                                kia (3 lần trong 4 tháng gần nhất)..</p>
+                        </div>
+                        <div class="news-detail">
+                            <a><img
+                                    src="https://cdn.24h.com.vn/upload/3-2020/images/2020-08-22/medium/1598044651-722-thumbnail-width640height480.jpg" /></a>
+                            <div class="info-post">
+                                <h4> <a href="">Kết quả bóng đá Sevilla - Inter Milan: Rượt đuổi 5 bàn, người hùng hóa
+                                        tội đồ (Chung kết Europa League)</a></h4>
+                            </div>
+                            <div>
+                                <span>Ngày đăng: 30-09-2019</span>
+                            </div>
+                            <p>Sau khi thắng ngược MU 2-1 đầy ấn tượng ở bán kết Europa League, Sevilla tiến vào trận
+                                chung kết với hy vọng sẽ lập kỷ lục mới với lần thứ 6 đăng quang. Dẫu vậy, đối thủ của
+                                đội bóng xứ Andalusia là Inter Milan, những người cũng vừa gây dấu ấn cực mạnh với màn
+                                vùi dập cựu vương Shakhtar Donetsk 5-0.</p>
+                        </div>
+                        <div class="news-detail">
+                            <a><img
+                                    src="https://cdn.24h.com.vn/upload/3-2020/images/2020-08-21/medium/mohamed-salah-roberto-firmino-andrew-robertson-premier-league_1cc7k2z7hu1lq1uxaunfspipmk-40-1597974569-319-width640height480.jpg" /></a>
+                            <div class="info-post">
+                                <h4> <a href="">Đại gia Ngoại hạng Anh nổi loạn định "vòi tiền" truyền hình, người hâm
+                                        mộ phẫn nộ </a></h4>
+                            </div>
+                            <div>
+                                <span>Ngày đăng: 30-09-2019</span>
+                            </div>
+                            <p>Tình cảnh thâm hụt doanh thu vì không thể cho khán giả vào sân đang khiến các đội bóng
+                                Ngoại hạng Anh lao đao. Và nó là căn nguyên của nhiều vấn đề phát sinh trước thềm mùa
+                                giải 2020/21.</p>
+                        </div>
+                        <div class="news-detail">
+                            <a><img
+                                    src="https://cdn.24h.com.vn/upload/3-2020/images/2020-08-21/medium/clip-ava-1598007244-265-width640height480.jpg" /></a>
+                            <div class="info-post">
+                                <h4> <a href="">Barca săn "hàng thải" MU thay Messi, Man City gây choáng với Grealish
+                                        (Clip 1 phút Bóng đá 24H) </a></h4>
+                            </div>
+                            <div>
+                                <span>Ngày đăng: 30-09-2019</span>
+                            </div>
+                            <p>Những "ông lớn" châu Âu như Barcelona hay Man City đang rất tích cực trên thị trường
+                                chuyển nhượng nhằm lấy lại vị thế đã đánh mất ở mùa giải vừa qua. Chi tiết sẽ có trong
+                                Clip 1 phút Bóng đá 24H ngày 21/8..</p>
+                        </div>
+                        <div class="news-detail">
+                            <a><img
+                                    src="https://cdn.24h.com.vn/upload/3-2020/images/2020-08-21//bur-1598008058-178-width640height480.jpg" /></a>
+                            <div class="info-post">
+                                <h4> <a href="">"Gã điên" của Ngoại hạng Anh lương cao hơn cả Solskjaer, MU "giật mình"
+                                    </a></h4>
+                            </div>
+                            <div>
+                                <span>Ngày đăng: 30-09-2019</span>
+                            </div>
+                            <p>Leeds United mới đây đã biến HLV Marcelo Bielsa trở thành chiến lược gia nhận lương cao
+                                thứ 6 ở Ngoại hạng Anh.</p>
+                        </div>
+
+
+
+
+                    </div>
+
+
+                    <div class="quatrang">
+                        <span>1</sapan>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                            <a href="#">...</a>
+                            <a href="#">4</a>
+                            <a href="#">5</a>
+                            <a href="#">6</a>
+                            <a href="#">Tiếp theo</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="rightaa">
+                <div class="sidebar">
+                    <div class="widget">
+                        <h3>Chuyên mục</h3>
+                        <div class="content-w">
+                            <ul>
+                                <li><a href="#"><i class="fa fa-angle-right"></i> Tin Tức <span>(152)</span></a>
+                                </li>
+                                <li><a href="#"><i class="fa fa-angle-right"></i> Thể Thao <span>(52)</span></a></li>
+                                <li><a href="#"><i class="fa fa-angle-right"></i> Đời Sống Showbiz <span>(15)</span></a>
+                                </li>
+                                <li><a href="#"><i class="fa fa-angle-right"></i> Ô tô <span>(7)</span></a></li>
+                                <li><a href="#"><i class="fa fa-angle-right"></i> Ngoại Hạng Anh <span>(8)</span></a>
+                                </li>
+                                <li><a href="#"><i class="fa fa-angle-right"></i> Chủ đề khác <span>(10)</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="widget">
+                        <h3>Bài viết mới</h3>
+                        <div class="content-new">
+                            <div class="cnl">
+                                <a href="#"><img
+                                        src="https://cdn.24h.com.vn/upload/3-2020/images/2020-08-22/medium/images2309552_lich_thi_dau_chung_ket_champions_league_zlex-640-1598032901-482-width640height480.jpg"
+                                        width="150px" alt=""></a>
+                            </div>
+                            <div class="cnr">
+                                <h5><a href="#">Đội hình trong mơ chung kết Cúp C1, PSG - Bayern: Mbappe vắng mặt vì
+                                        Gnabry</a></h5>
+                                <h6>Ngày đăng: 22-02-2016</h6>
+                            </div>
+
+                        </div>
+                        <div class="content-new">
+                            <div class="cnl">
+                                <a href="#"><img
+                                        src="https://cdn.24h.com.vn/upload/3-2020/images/2020-08-22/medium/1598046400-610-thumbnail-width640height480.jpg"
+                                        width="150px" alt=""></a>
+                            </div>
+                            <div class="cnr">
+                                <h5><a href="#">Sevilla vô địch Europa League: "Chân mệnh thiên tử", ngả mũ kỳ tích vĩ
+                                        đại</a></h5>
+                                <h6>Ngày đăng: 22-02-2016</h6>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="widget">
+                        <h3>Bài viết xem nhiều</h3>
+                        <div class="content-mostv">
+                            <div class="cmostR">
+                                <span>1</span>
+                            </div>
+                            <div class="cmostL">
+
+                                <h4><a href="#">Kết quả bóng đá Sevilla - Inter Milan: Rượt đuổi 5 bàn...</a></h4>
+                            </div>
+                        </div>
+                        <div class="content-mostv">
+                            <div class="cmostR">
+                                <span>2</span>
+                            </div>
+                            <div class="cmostL">
+
+                                <h4><a href="#">Kết quả cuộc gặp Messi - Koeman: Messi thông báo...</a></h4>
+                            </div>
+                        </div>
+                        <div class="content-mostv">
+                            <div class="cmostR">
+                                <span>3</span>
+                            </div>
+                            <div class="cmostL">
+
+                                <h4><a href="#">Tin mới siêu chuyển nhượng Messi - Ronaldo đến PSG..</a></h4>
+                            </div>
+                        </div>
+                        <div class="content-mostv">
+                            <div class="cmostR">
+                                <span>4</span>
+                            </div>
+                            <div class="cmostL">
+
+                                <h4><a href="#">Ibrahimovic bị đồn "ăn vụng" với nữ MC thể thao quyến..</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget">
+                        <h3>Quảng cáo</h3>
+                        <div class="content-wc">
+                            <a href="#"><img src="https://via.placeholder.com/300x600" alt=""></a>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="footer">
+            <div class="container">
+                <div class="row1">
+                    <div class="col">
+                        <div class="block-footer">
+                            <h3>Về tôi</h3>
+
+                            <p>Tốt nghiệp ĐH Sư Phạm nhưng tôi lại thích lập trình và thiết kê web, vì vậy tôi tạo ra
+                                trang web này để trao đổi kiến thức về lập trình và thiết kế web</p>
+                            <a href="#" class="readmore">Xem thêm</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row1">
+                    <div class="col">
+                        <div class="block-footer">
+                            <h3>Chuyên mục</h3>
+                            <p><a href="#">Phân Tích</a></p>
+                            <p><a href="#">Làm Đẹp</a></p>
+                            <p><a href="#">Đời Sống</a></p>
+                            <p><a href="#">Xe Cộ</a></p>
+                            <p><a href="#">Công Nghệ</a></p>
+                            <p><a href="#">Ẩm Thực</a></p>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row1">
+                    <div class="col">
+                        <div class="block-footer">
+                            <h3>Liên hệ</h3>
+                            <p>Địa chỉ: Lầu 4- Tầng Mây - Khu trung tâm công nghệ</p>
+                            <p>Điện thoại: 01658949680</p>
+                            <p>Email: Nhóm4@gmail.com</p>
+                            <p>Website: https://huykira.net</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="copyright">
+                <p>Bản quyền thuộc về Nhóm 4 </p>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+<script>
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length) { myIndex = 1 }
+        x[myIndex - 1].style.display = "block";
+        setTimeout(carousel, 3000);
+    }
+</script>
+
+</html>
